@@ -1,9 +1,18 @@
 function renderCars() {
+    console.log('renderCars wurde gestartet');
+
+    console.table(cars);
+
     let productListRef = document.getElementById('productList');
+
+    console.log('productListRef:', productListRef);
 
     productListRef.innerHTML = '';
 
     for (let i = 0; i < cars.length; i++) {
+        console.log('Aktuelles Auto:', cars[i]);
+        console.log('i =', i);
+
         productListRef.innerHTML += `
             <div class="single-car">
 
@@ -32,6 +41,8 @@ function renderCars() {
         `;
 
         for (let j = 0; j < cars[i].features.length; j++) {
+            console.log('Feature:', cars[i].features[j]);
+
             document.getElementById(`car${i}`).innerHTML += `
                 <li>${cars[i].features[j]}</li>
             `;
